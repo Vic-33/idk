@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Our Beautiful Journey</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="pop.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="he">
+        <h1>
+            <span class="heading">Our</span>
+            <span class="heading">Beautiful</span>
+            <span class="heading">Journey</span>
+        </h1>
+        <!-- Rounded Button -->
+        <button class="popup-btn" id="openPopupBtn">Open Popup</button>
+    </section>
+
+    <!-- Popup Modal -->
+    <div class="popup" id="popup">
+        <div class="popup-content">
+            <span class="close-btn" id="closePopupBtn">&times;</span>
+            <h2>Wait!!</h2>
+            <p>If you want to go ahead, you'll have to enter the password.</p>
+            <!-- Input field for name -->
+            <input type="text" id="userInput" placeholder="Enter your name" />
+            <!-- Go Button -->
+            <button class="go-btn" id="goBtn">Go</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="pop.js"></script>
+</body>
+</html>
