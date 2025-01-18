@@ -1,0 +1,409 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Poppins", sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+    height: 100%;
+}
+
+#check {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh; /* Full viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white; /* Make the text white */
+    font-size: 4rem; /* Larger font size for impact */
+    font-weight: bold;
+    background-size: 300% 300%;
+    background-image: linear-gradient(45deg, #4682B4, #D8BFD8, #FFB6C1, #800080);
+    animation: gradientAnimation 5s ease infinite;
+}
+
+/* Smooth Scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Keyframes for Gradient Animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Hero Heading */
+.hero h1 {
+    font-size: 6rem; /* Large text size */
+    font-weight: 700; /* Bold weight for prominence */
+    text-align: center;
+    letter-spacing: 5px; /* Spacing between letters */
+    opacity: 0.9; /* Slight transparency for a soft look */
+    animation: fadeIn 2s ease-out forwards; /* Fade-in effect for heading */
+}
+
+/* Word-by-word fade-in for hero heading */
+.hero h1 .heading {
+    display: inline-block;
+    opacity: 0; /* Start hidden */
+    animation: headingFadeIn 1s forwards; /* Word-by-word fade-in */
+}
+
+.hero h1 .heading:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.hero h1 .heading:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.hero h1 .heading:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Fade-in animation for images */
+.hero-images {
+    display: flex;
+    justify-content: center; /* Center the images */
+    gap: 20px; /* Space between images */
+    margin-top: 20px; /* Space between heading and images */
+}
+
+.hero-images img {
+    width: 350px; /* Set a fixed width for the images */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px; /* Optional: rounded corners for images */
+    opacity: 0; /* Initially hidden for animation */
+    animation: fadeInImages 1s ease-out forwards; /* Animation to fade in images */
+}
+
+.hero-images img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.hero-images img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.hero-images img:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Fade-in animation for images */
+@keyframes fadeInImages {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Overall fade-in effect */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Word-by-word fade-in animation */
+@keyframes headingFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Start with slight downward position */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Final position */
+    }
+}
+
+/* Scroll Section */
+.content {
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 20px; /* Ensure space between sections */
+    position: relative; /* Allow absolute positioning for animations */
+}
+
+/* Ensure that the text container is visible and does not get cut off */
+.text {
+    max-width: 900px; /* Limit the text container width */
+    margin: 40px auto; /* Center align and provide spacing */
+    padding: 10px; /* Add padding for better readability */
+    font-size: 1.2rem;
+    color: #333;
+    line-height: 1.8;
+    overflow: visible; /* Allow content to flow normally */
+}
+
+/* Fade in text animation */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade out effect on scroll */
+@keyframes fadeOutText {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+/* Ensure no clipping occurs when sections are scrolled */
+.images {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+    z-index: 5; /* Ensure images are properly layered */
+}
+
+/* Scroll-triggered image fade-in */
+.images img {
+    width: 80%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 1s forwards ease-in-out;
+}
+
+.images img:nth-child(1) {
+    animation-delay: 0.5s;
+}
+
+.images img:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.images img:nth-child(3) {
+    animation-delay: 1.5s;
+}
+
+/* Animations */
+@keyframes fadeUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade-in effect for text */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Section Heading */
+.section-heading {
+    font-size: 2rem;
+    margin: 50px 0;
+    text-align: center;
+    animation: fadeInText 1s ease-out forwards;
+}
+
+
+/* Gradient animation */
+@keyframes gradientAnimation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Section Heading */
+.section-heading {
+    font-size: 4rem;
+    font-weight: bold;
+    color: transparent; /* For gradient effect */
+    background: linear-gradient(90deg, #FF5733, #FFC300); /* Default gradient */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite; /* Add gradient animation */
+    margin-bottom: 20px;
+}
+
+/* Specific Gradient and Animation for each month */
+#december-heading {
+    background: linear-gradient(90deg, #FF5733, #FFC300); /* Red to Orange */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#january-heading {
+    background: linear-gradient(90deg, #3498DB, #2ECC71); /* Blue to Green */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0ms;
+}
+
+#february-heading {
+    background: linear-gradient(90deg, #9B59B6, #E74C3C); /* Purple to Red */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0ms;
+}
+
+#march-heading {
+    background: linear-gradient(90deg, #F39C12, #D35400); /* Yellow to Orange */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0ms;
+}
+
+#april-heading {
+    background: linear-gradient(90deg, #1ABC9C, #16A085); /* Turquoise to Green */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0ms;
+}
+
+#may-heading {
+    background: linear-gradient(90deg, #F1C40F, #F39C12); /* Yellow to Orange */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#june-heading {
+    background: linear-gradient(90deg, #8E44AD, #9B59B6); /* Purple to Violet */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0ms;
+}
+
+#july-heading {
+    background: linear-gradient(90deg, #E67E22, #D35400); /* Orange to Dark Orange */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#august-heading {
+    background: linear-gradient(90deg, #2ECC71, #27AE60); /* Green to Dark Green */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#september-heading {
+    background: linear-gradient(90deg, #2980B9, #3498DB); /* Blue to Light Blue */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#october-heading {
+    background: linear-gradient(90deg, #E74C3C, #C0392B); /* Red to Dark Red */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+#november-heading {
+    background: linear-gradient(90deg, #34495E, #2C3E50); /* Dark Blue to Darker Blue */
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientAnimation 5s ease infinite;
+    animation-delay: 0s;
+}
+
+/* Fade-in text animation */
+@keyframes fadeInText {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.scroll-trigger {
+    opacity: 0;
+    transform: translateY(20px); /* Slight downward offset */
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+/* Visible state after scroll */
+.scroll-trigger.show {
+    opacity: 1;
+    transform: translateY(0);
+}
